@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Necessário para a página ser responsiva no celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maykon | Meus jogos favoritos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <!-- TROCAR: coloque sua foto em img/foto.jpg -->
+    <img class="foto" src="img/foto.jpg" alt="Foto do Maykon">
+    <h1>Maykon</h1>
+    <p class="apresentacao">
+      <!-- TROCAR: reescreva com as suas palavras -->
+      Esta página reúne seis jogos que marcaram minha experiência: corrida,
+      tiro, ação cooperativa e terror. Passe o mouse nos cards para ver o efeito.
+    </p>
+    <a class="botao" href="#cards">Ver os jogos</a>
+  </header>
+
+  <main>
+    <h2 class="titulo-secao">Meus jogos favoritos</h2>
+
+    <!-- Grid com 6 cards (o layout está no style.css) -->
+    <!-- As imagens vêm da loja oficial da Steam (hotlink). Para ficar estável, baixe e salve em img/ -->
+    <section class="grade" id="cards">
+
+      <article class="card">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2483190/99ff2e08356158cc0aacb4cf192298fc4c45f215/header_alt_assets_2.jpg" alt="Capa de Forza Horizon 6">
+        <h3>Forza Horizon 6</h3>
+        <p>Corrida em mundo aberto. Gosto de explorar o mapa e de poder escolher o carro certo para cada tipo de prova.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220240/header.jpg" alt="Capa de Far Cry 3">
+        <h3>Far Cry 3</h3>
+        <p>Mundo aberto numa ilha selvagem, com liberdade para atacar os postos inimigos do jeito que eu quiser.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/header.jpg" alt="Capa de Warframe">
+        <h3>Warframe</h3>
+        <p>Ação cooperativa em terceira pessoa, com movimentação rápida e muita personalização do Warframe e do arsenal.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/55230/header.jpg" alt="Capa de Saints Row: The Third">
+        <h3>Saints Row 3</h3>
+        <p>Ação exagerada e bem-humorada, que não se leva a sério e entrega missões absurdas.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/221040/header.jpg" alt="Capa de Resident Evil 6">
+        <h3>Resident Evil 6</h3>
+        <p>Ação e terror com várias campanhas e personagens, e o modo cooperativo deixa tudo mais divertido.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/379720/header.jpg" alt="Capa de DOOM">
+        <h3>DOOM</h3>
+        <p>Tiro em primeira pessoa rápido e direto, que premia quem se mantém em movimento.</p>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Página feita só com HTML e CSS | Aula 9</p>
+  </footer>
+
+</body>
+</html>

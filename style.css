@@ -1,0 +1,151 @@
+/* ===== Base ===== */
+* {
+  box-sizing: border-box; /* padding e borda não aumentam a largura do elemento */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eef2f1;
+  color: #1d2b2a;
+  line-height: 1.5;
+}
+
+/* ===== Topo: título, foto e apresentação ===== */
+.topo {
+  background-color: #0f6b6b;
+  color: #ffffff;
+  text-align: center; /* centraliza os textos sem usar Flexbox */
+  padding: 40px 20px;
+}
+
+.topo h1 {
+  font-size: 2.5rem;
+  margin: 16px 0 8px 0;
+}
+
+.apresentacao {
+  max-width: 600px;
+  margin: 0 auto 24px auto; /* margin auto nas laterais centraliza o bloco */
+}
+
+/* Foto redonda */
+.foto {
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 4px solid #f2b705;
+  object-fit: cover; /* NOVO: corta a imagem para preencher a caixa sem esticar (visto na documentação MDN) */
+
+  /* ANIMAÇÃO AUTOMÁTICA: roda sozinha quando a página carrega.
+     nome da animação | duração | suavização */
+  animation: aparecer 1.5s ease-out;
+}
+
+/* @keyframes define os passos da animação: começa invisível e pequena e termina normal */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Botão ===== */
+.botao {
+  display: inline-block;
+  background-color: #f2b705;
+  color: #1d2b2a;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+
+  /* TRANSITION: a mudança de cor leva 0.3s em vez de ser instantânea */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.botao:hover {
+  background-color: #ffffff;
+  color: #0f6b6b;
+}
+
+/* ===== Título da seção ===== */
+.titulo-secao {
+  text-align: center;
+  margin: 40px 20px 24px 20px;
+}
+
+/* ===== Grid dos cards (sem Flexbox) ===== */
+.grade {
+  display: grid;
+  grid-template-columns: 1fr;  /* celular: 1 coluna */
+  gap: 24px;                   /* espaço entre os cards */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
+}
+
+/* ===== Card ===== */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden; /* a imagem não passa dos cantos arredondados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  /* TRANSITION: o movimento, a sombra e a cor do fundo mudam suavemente em 0.3s */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* NOVO: mesma função da foto (MDN) */
+  background-color: #cfdad9; /* cor de fundo enquanto a imagem não carrega */
+}
+
+.card h3 {
+  padding: 16px 16px 4px 16px;
+  color: #0f6b6b;
+}
+
+.card p {
+  padding: 0 16px 20px 16px;
+}
+
+/* TRANSFORM no hover: o card sobe 10px (translateY) e cresce 5% (scale) */
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  background-color: #fff8e0;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  text-align: center;
+  padding: 20px;
+  background-color: #1d2b2a;
+  color: #ffffff;
+}
+
+/* ===== Responsividade (media queries) ===== */
+/* Tablet: 2 colunas */
+@media (min-width: 600px) {
+  .grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Computador: 3 colunas */
+@media (min-width: 960px) {
+  .grade {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
